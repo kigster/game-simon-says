@@ -81,4 +81,4 @@ script:
   - cmake ..
   - make install
   - cd ..
-  - ./bin/simon-says-test
+  - ./bin/simon-says-tests
