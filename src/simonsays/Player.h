@@ -5,9 +5,6 @@
 #ifndef PROJECT_PLAYER_H
 #define PROJECT_PLAYER_H
 
-
-#include <MacTypes.h>
-
 class Player {
 protected:
     enum type { AI, HUMAN, NETWORK };
