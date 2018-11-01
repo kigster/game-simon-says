@@ -1,10 +1,10 @@
 # "Simon Says..."
 
+[![Build Status](https://travis-ci.org/kigster/SimonSays.svg?branch=master)](https://travis-ci.org/kigster/SimonSays) 
+
 ## A C/C++ Game for Repeating the Computer-Generated Patterns
 
 ### Usage
-
-TBD.
 
 ### Acklowledgements
 
