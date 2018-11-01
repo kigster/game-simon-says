@@ -77,7 +77,7 @@ script:
   - rm -rf build
   - mkdir -p build
   - cd build
-  - cmake ../..
+  - cmake ..
   - make install
   - cd ..
   - ./bin/simon-says-test
