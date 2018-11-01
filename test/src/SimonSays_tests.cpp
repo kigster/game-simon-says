@@ -17,3 +17,7 @@ protected:
   };
 
 };
+
+TEST(SimonSaysTest, HandlesZeroInput) {
+  EXPECT_EQ(0, 0);
+}

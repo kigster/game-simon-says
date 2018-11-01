@@ -1,0 +1,62 @@
+#
+# http://bit.ly/simon-says-uml
+#
+title SimonSays Game Design
+
+participant User
+participant Game
+participant Board
+participant Move
+participant Pattern
+
+entryspacing 0.8
+participant Player1
+participant Player2
+
+participant Move
+participant Pattern
+
+activate Game
+User-->*Game:<<create>>
+Game-->*Board:<<create>>
+
+Game-->*Player1:<<create>>
+activate Player1
+
+Game-->*Player2:<<create>>
+activate Player2
+
+User-->*Game:<<begin>>
+loop #4F8989 #white until is GameOver
+
+Game->Game: Pick Next Player
+
+Game-->*Player1: getNextMove()
+activate Move
+Player1-->*Move:<< create >>
+Move-->*Pattern:<< define >>
+
+Move-->*Game:<<Move>>
+Game-->*Board:<<render Move>>
+deactivate Move
+
+Game->Game: Change Current Player
+
+Game-->*Player2: getNextMove()
+activate Move
+Player2-->*Move:<< create >>
+Move-->*Pattern:<< repeat >>
+Move-->*Game:<<Move>>
+Game-->*Board:<<render Move>>
+deactivate Move
+
+activate Game
+Game->Game: Compare Moves
+group #2f2e7b if #white [Moves match]
+Game->Game: changePlayers
+end
+group #2f2e7b else #white
+Game->Game: gameOver
+Game-->*Board: << render GameOver >>
+end
+end
