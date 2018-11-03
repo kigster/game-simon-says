@@ -4,7 +4,9 @@
 
 #include "Game.h"
 
-Game::Game(Player *players, int boardSize) : players(players), boardSize(boardSize) {
+Game::Game(
+        Player *players, int boardSize) :
+        players(players), boardSize(boardSize) {
 }
 
 Game::Game(Player *players) : players(players) {
