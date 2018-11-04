@@ -7,18 +7,18 @@
 
 #include <iostream>
 #include <stdexcept>
+#include <GameController.h>
 
 using namespace std;
 
-class SimonSays {
-public:
-  explicit SimonSays() {
-  }
+namespace SimonSays {
+  class SimonController : GameController {
+  public:
+    SimonController();
+    ~SimonController() = default;
 
-  ~SimonSays() {
+  protected:
   };
-
-protected:
-};
+}
 
 #endif //SIMON_SAYS_H

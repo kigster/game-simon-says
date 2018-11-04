@@ -1,9 +1,37 @@
 cmake_minimum_required(VERSION 3.2)
-project(simon-says)
+project(‘game-lib')
 
-add_subdirectory(simonsays)
-set(SOURCE_FILES main.cpp)
+file(GLOB MODEL_SOURCES
+        "Model/*.h"
+        "Model/*.cpp"
+        )
 
-add_executable(simon-says ${SOURCE_FILES})
-target_link_libraries(simon-says simon-says-lib)
-install(TARGETS simon-says DESTINATION ${TARGET_LIBRARY_INSTALL_BIN_DIR})
+file(GLOB CONTROLLER_SOURCES
+        "Controller/*.h"
+        "Controller/*.cpp"
+        )
+
+file(GLOB VIEW_SOURCES
+        "View/*.h"
+        "View/*.cpp"
+        )
+
+file(GLOB GAME_SOURCES
+        "Game/*.h"
+        "Game/*.cpp"
+        )
+
+file(GLOB GAME_LIB_HEADERS
+        "*/*.h"
+        )
+
+set(GAME_SOURCE_FILES
+        ${MODEL_SOURCES}
+        ${CONTROLLER_SOURCES}
+        ${VIEW_SOURCES}
+        )
+
+include_directories(Game Controller Model View)
+add_library(game-lib SHARED STATIC ${GAME_SOURCE_FILES})
+install(TARGETS game-lib DESTINATION ${TARGET_LIBRARY_INSTALL_LIB_DIR})
+install(FILES ${GAME_LIB_HEADERS} DESTINATION ${TARGET_LIBRARY_INSTALL_INCLUDE_DIR})
