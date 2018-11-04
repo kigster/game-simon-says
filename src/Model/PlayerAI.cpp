@@ -3,3 +3,7 @@
 //
 
 #include "PlayerAI.h"
+
+PlayerAI::PlayerAI(GameController controller) : Player(controller) {
+
+}

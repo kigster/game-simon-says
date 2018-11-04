@@ -5,6 +5,5 @@
 #include "SimonController.h"
 
 namespace SimonSays {
-  SimonController::SimonController() {
-  }
 }
+

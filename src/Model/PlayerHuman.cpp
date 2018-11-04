@@ -3,3 +3,7 @@
 //
 
 #include "PlayerHuman.h"
+
+PlayerHuman::PlayerHuman(GameController controller) : Player(controller) {
+
+}

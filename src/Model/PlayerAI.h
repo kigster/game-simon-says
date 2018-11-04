@@ -9,7 +9,10 @@
 #include "Player.h"
 
 class PlayerAI : Player {
-
+public:
+  PlayerAI(GameController controller);
+protected:
+  GameController controller;
 };
 
 

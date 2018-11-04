@@ -8,14 +8,17 @@
 #include <iostream>
 #include <stdexcept>
 #include <GameController.h>
+#include <vector>
 
 using namespace std;
 
 namespace SimonSays {
   class SimonController : GameController {
+    int steps;
+    std::vector<int> original;
+    std::vector<int> repeated;
   public:
-    SimonController();
-    ~SimonController() = default;
+    virtual ~SimonController() {}
 
   protected:
   };

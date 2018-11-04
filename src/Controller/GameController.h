@@ -6,10 +6,6 @@
 #define GAME_CONTROLLER_H
 
 class GameController {
-  virtual void startGame() = 0;
-  virtual void stopGame() = 0;
-  virtual bool isFinished() = 0;
-  virtual void next() = 0;
 };
 
 #endif //GAME_CONTROLLER_H

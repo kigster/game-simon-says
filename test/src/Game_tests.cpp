@@ -2,6 +2,7 @@
 // Created by Konstantin Gredeskoul on 5/16/17.
 //
 #include <Game.h>
+#include <Board.h>
 #include "gtest/gtest.h"
 #include <SimonController.h>
 #include <PlayerAI.h>
@@ -22,6 +23,14 @@ protected:
 
 };
 
-TEST(SimonSaysTest, HandlesZeroInput) {
+TEST(GameTest, games_can_also_handle_zeros)
+{
   EXPECT_EQ(0, 0);
+}
+
+TEST(GameTest, shit_can_be_initialized) {
+    Board board = Board(4, 4);
+//  SimonSays::SimonController controller = SimonSays::SimonController(16);
+//  Player first = PlayerHuman((const GameController) controller);
+//  Player second = PlayerAI((const GameController) controller);
 }

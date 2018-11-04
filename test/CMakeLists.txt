@@ -20,7 +20,6 @@ include_directories(${GAME_LIB_INCLUDES})
 include_directories(${GAME_LIB_HEADERS}/Game/SimonSays)
 
 file(GLOB TEST_SOURCES
-        "src/*.h"
         "src/*_tests.cpp"
         )
 

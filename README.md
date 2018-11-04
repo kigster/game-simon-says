@@ -6,6 +6,25 @@
 
 ### Usage
 
+```c++
+ 
+SimonSays simonSays = new SimonSays(16);
+
+Player first        = PlayerHuman(simonSays);
+Player second       = PlayerAI(simonSays);
+Player *players     = { first, second } ;
+
+Board board         = Board(4, 4);
+Game game           = Game(simonSays, board);
+
+game.begin(players);
+while (game.inProgress()) {
+  game.render(); // calls board.render()
+  game.next();   // calls board.update(currentPlayer().move())
+}
+game.finish();
+```
+
 ### Acklowledgements
 
 This project is based on the

@@ -5,18 +5,14 @@
 #ifndef PROJECT_PLAYER_H
 #define PROJECT_PLAYER_H
 
-#include <MacTypes.h>
 #include <GameController.h>
 #include "GameLogic.h"
 
 class Player {
-  GameController &controller;
-
 public:
-  explicit Player(GameController &controller);
-
-protected:
-
+  Player(const GameController &controller);
+public:
+  GameController controller;
 };
 
 #endif //PROJECT_PLAYER_H

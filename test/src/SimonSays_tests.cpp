@@ -14,11 +14,11 @@ protected:
   void SetUp() override {
   };
 
-  void TearDown() override {
+    void TearDown() override {
   };
 
 };
 
-TEST(SimonSaysTest, SimonIsZero) {
+TEST(SimonSaysTest, simon_hhandles_zeros) {
   EXPECT_EQ(0, 0);
 }

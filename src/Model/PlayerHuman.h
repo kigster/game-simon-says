@@ -9,6 +9,9 @@
 #include "Player.h"
 
 class PlayerHuman : Player {
+  explicit PlayerHuman(GameController controller);
+protected:
+  GameController controller;
 };
 
 
