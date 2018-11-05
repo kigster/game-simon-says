@@ -1,9 +1,10 @@
 //
 // Created by Konstantin Gredeskoul on 5/16/17.
 //
+#include "gtest/gtest.h"
+
 #include <Game.h>
 #include <Board.h>
-#include "gtest/gtest.h"
 #include <SimonController.h>
 #include <PlayerAI.h>
 #include <PlayerHuman.h>

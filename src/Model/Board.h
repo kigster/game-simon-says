@@ -23,22 +23,26 @@ struct InvalidArgumentError: public std::exception {
 };
 
 class Board {
+protected:
   std::vector<int> matrix;
-  int index(int rows, int cols);
-  int rows, cols;
 
 public:
+  int rows, cols;
+
   Board(int rows, int cols);
   virtual ~Board() = default;
 
   unsigned long size();
   void reset();
 
-  void set(std::vector<int> indices, int value);
-  void set(int rows, int cols, int value);
-  void set(int index, int value);
+  int index(int col, int row);
 
-  int get(int rows, int cols);
+  void set(std::vector<int> indices, int value);
+
+  void set(int cols, int rows, int value);
+  int get(int col, int row);
+
+  void set(int index, int value);
   int get(int index);
 
 };

@@ -2,12 +2,9 @@
 // Created by Konstantin Gredeskoul on 11/3/18.
 //
 
-#include <Board.h>
 #include "Board.h"
 
-Board::Board(int _rows, int _cols) {
-  rows = _rows;
-  cols = _cols;
+Board::Board(int _cols, int _rows) : rows(_rows), cols(_cols) {
   reset();
 }
 
@@ -27,16 +24,22 @@ void Board::set(std::vector<int> indices, int value) {
     set(element, value);
   }
 }
-void Board::set(int rows, int cols, int value) {
-  matrix[(unsigned long) index(rows, cols)] = value;
+
+void Board::set(int col, int row, int value) {
+  matrix[(unsigned long) index(col, row)] = value;
 }
 
 void Board::set(int index, int value) {
   matrix[index] = value;
 }
 
-int Board::index(int r, int c) {
-  auto i = rows * r + c;
+// [ 0, 1, 2, 3, 4 ]
+// [ 5, 6, 7, 8, 9 ]
+// col = 4, row = 2
+// (row - 1) * cols + (col - 1)
+
+int Board::index(int col, int row) {
+  int i = (row - 1) * cols + col - 1;
   if (i > size()) {
     throw InvalidArgumentError();
   } else {
@@ -44,8 +47,8 @@ int Board::index(int r, int c) {
   }
 }
 
-int Board::get(int rows, int cols) {
-  return matrix[index(rows, cols)];
+int Board::get(int col, int row) {
+  return matrix[index(col, row)];
 }
 
 int Board::get(int index) {
